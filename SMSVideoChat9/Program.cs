@@ -6,6 +6,7 @@ using SMSVideoChat9.Components.Account;
 using SMSVideoChat9.Data;
 using Microsoft.AspNetCore.ResponseCompression;
 using SMSVideoChat9.Hubs;
+using SMSVideoChat9.Client.WebRtc;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSignalR();
 
@@ -30,7 +31,7 @@ builder.Services.AddAuthentication(options =>
     })
     .AddIdentityCookies();
 builder.Services.AddAuthorization();
-
+builder.Services.AddScoped<WebRtcService>();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
@@ -71,4 +72,5 @@ app.MapRazorComponents<App>()
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
 app.MapHub<ChatHub>("/chathub");
+app.MapHub<MessageHub>("/messagehub");
 app.Run();
