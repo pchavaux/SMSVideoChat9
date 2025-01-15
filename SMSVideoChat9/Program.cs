@@ -4,9 +4,16 @@ using SMSVideoChat9.Client.Pages;
 using SMSVideoChat9.Components;
 using SMSVideoChat9.Components.Account;
 using SMSVideoChat9.Data;
-
+using Microsoft.AspNetCore.ResponseCompression;
+using SMSVideoChat9.Hubs;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSignalR();
 
+builder.Services.AddResponseCompression(opts =>
+{
+    opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+        ["application/octet-stream"]);
+});
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents()
@@ -37,7 +44,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 
 var app = builder.Build();
-
+app.UseResponseCompression();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -63,5 +70,5 @@ app.MapRazorComponents<App>()
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
-
+app.MapHub<ChatHub>("/chathub");
 app.Run();
