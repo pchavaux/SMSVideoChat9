@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35617.110 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSVideoChat9", "SMSVideoChat9\SMSVideoChat9.csproj", "{F9986094-D826-425C-93F2-96DBEF47C973}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSVideoChat9", "SMSVideoChat9\SMSVideoChat9.csproj", "{F46BDC3B-E070-43FE-B7EF-A9A49891467D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSVideoChat9.Client", "SMSVideoChat9.Client\SMSVideoChat9.Client.csproj", "{2DBAACF2-0DF8-4AC4-907B-396862A4A0D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSVideoChat9.Client", "SMSVideoChat9.Client\SMSVideoChat9.Client.csproj", "{D23EF310-D7FD-457B-A228-F6AA34BFEC47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F9986094-D826-425C-93F2-96DBEF47C973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9986094-D826-425C-93F2-96DBEF47C973}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9986094-D826-425C-93F2-96DBEF47C973}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9986094-D826-425C-93F2-96DBEF47C973}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2DBAACF2-0DF8-4AC4-907B-396862A4A0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2DBAACF2-0DF8-4AC4-907B-396862A4A0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2DBAACF2-0DF8-4AC4-907B-396862A4A0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2DBAACF2-0DF8-4AC4-907B-396862A4A0D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F46BDC3B-E070-43FE-B7EF-A9A49891467D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F46BDC3B-E070-43FE-B7EF-A9A49891467D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F46BDC3B-E070-43FE-B7EF-A9A49891467D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F46BDC3B-E070-43FE-B7EF-A9A49891467D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D23EF310-D7FD-457B-A228-F6AA34BFEC47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23EF310-D7FD-457B-A228-F6AA34BFEC47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23EF310-D7FD-457B-A228-F6AA34BFEC47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23EF310-D7FD-457B-A228-F6AA34BFEC47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7CA3DC06-FE5B-47AD-B0B7-2DEE7B772E0F}
+		SolutionGuid = {64F0B94C-1301-43E1-9C25-25EA35DC8887}
 	EndGlobalSection
 EndGlobal
