@@ -2,7 +2,10 @@
 // Set up media stream constant and parameters.
 const mediaStreamConstraints = {
     video: true,
-    audio: true
+    audio: true,
+    echoCancellation: true,
+    noiseSuppression: true,
+    autoGainControl: true
 };
 
 // Set up to exchange video and audio.
@@ -42,6 +45,7 @@ export function initialize(dotNetRef) {
 export async function startLocalStream() {
     console.log("Requesting local stream.");
     localStream = await navigator.mediaDevices.getUserMedia(mediaStreamConstraints);
+    localStream.au
     return localStream;
 }
 
