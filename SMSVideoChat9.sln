@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35617.110 d17.13
+VisualStudioVersion = 17.13.35617.110
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSVideoChat9", "SMSVideoChat9\SMSVideoChat9.csproj", "{F46BDC3B-E070-43FE-B7EF-A9A49891467D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSVideoChat9.Client", "SMSVideoChat9.Client\SMSVideoChat9.Client.csproj", "{D23EF310-D7FD-457B-A228-F6AA34BFEC47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{29108AC9-D43C-48E2-BF0E-7C439BA0C478}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D23EF310-D7FD-457B-A228-F6AA34BFEC47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D23EF310-D7FD-457B-A228-F6AA34BFEC47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D23EF310-D7FD-457B-A228-F6AA34BFEC47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29108AC9-D43C-48E2-BF0E-7C439BA0C478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29108AC9-D43C-48E2-BF0E-7C439BA0C478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29108AC9-D43C-48E2-BF0E-7C439BA0C478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29108AC9-D43C-48E2-BF0E-7C439BA0C478}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,6 +7,8 @@ using SMSVideoChat9.Data;
 using Microsoft.AspNetCore.ResponseCompression;
 using SMSVideoChat9.Hubs;
 using SMSVideoChat9.Client.WebRtc;
+ 
+using Microsoft.AspNetCore.Http.Connections;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSignalR();
 
@@ -19,7 +21,8 @@ builder.Services.AddResponseCompression(opts =>
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents()
     .AddAuthenticationStateSerialization();
-
+//builder.Services.AddScoped<FriendService>();
+builder.Services.AddControllers();
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
@@ -43,7 +46,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
-
+ 
 var app = builder.Build();
 app.UseResponseCompression();
 // Configure the HTTP request pipeline.
@@ -71,6 +74,14 @@ app.MapRazorComponents<App>()
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
+app.MapControllers();
 //app.MapHub<ChatHub>("/chathub");
+app.MapHub<ChatHub>("/chathub", options =>
+{
+    options.Transports =
+        HttpTransportType.WebSockets |
+        HttpTransportType.LongPolling;
+}
+);
 app.MapHub<MessageHub>("/messagehub");
 app.Run();
