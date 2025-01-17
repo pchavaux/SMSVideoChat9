@@ -2,12 +2,15 @@
 
 
 
+@using SMSVideoChat9.Client.Services
 @using SharedLibrary.Models
 @using Microsoft.Extensions.Logging
 @inject ILogger<SmsPage> _logger 
 @* @inject VoipMsSmsService SmsService *@
-@*  @inject FriendService friendsService *@
-@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject ICustomerService customerService
+@* @inject IFriendService friendsService
+ *@
+ @inject AuthenticationStateProvider AuthenticationStateProvider
 @rendermode InteractiveWebAssembly
 
 
@@ -118,7 +121,7 @@
             //         .Where(f => f.FriendSipPhoneNumber == SipPhoneNumber)
             //         .ToListAsync();
             // }
-          //  Friends = await friendsService.GetFriendsAsync(); //.Where(f => f.FriendSipPhoneNumber == SipPhoneNumber);
+        //    Friends = await friendsService.GetFriendsAsync(); //.Where(f => f.FriendSipPhoneNumber == SipPhoneNumber);
                                                               //         .ToListAsync();
         }
     }

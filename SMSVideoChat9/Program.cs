@@ -9,6 +9,7 @@ using SMSVideoChat9.Hubs;
 using SMSVideoChat9.Client.WebRtc;
  
 using Microsoft.AspNetCore.Http.Connections;
+using SMSVideoChat9.Client.Services;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSignalR();
 
@@ -21,7 +22,7 @@ builder.Services.AddResponseCompression(opts =>
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents()
     .AddAuthenticationStateSerialization();
-//builder.Services.AddScoped<FriendService>();
+ 
 builder.Services.AddControllers();
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();

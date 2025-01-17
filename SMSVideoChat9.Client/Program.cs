@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using System.Net.Http;
 using SMSVideoChat9.Client.WebRtc;
+using SMSVideoChat9.Client.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
  
@@ -9,9 +10,11 @@ builder.Services.AddAuthorizationCore();
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddAuthenticationStateDeserialization();
 builder.Services.AddScoped<WebRtcService>();
-
-
+//builder.Services.AddScoped<SMSVideoChat9.Client.Services.IFriendService, FriendService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 // Register HttpClient with a base address (replace with your server's URL)
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
 builder.Services.AddScoped(sp => new HttpClient
 {
     BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) // Or API base URL
