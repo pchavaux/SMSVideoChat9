@@ -30,7 +30,6 @@ const servers = {
         { urls: 'stun:stun2.l.google.com:19302' }
     ]
 };
-
 let dotNet;
 let localStream;
 let remoteStream;
