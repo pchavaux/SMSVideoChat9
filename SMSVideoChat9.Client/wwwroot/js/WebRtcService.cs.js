@@ -23,11 +23,25 @@ const offerOptions = {
 //        }
 //    ]
 //}
+//const servers = {
+//    iceservers: [
+//        { urls: 'stun:stun.l.google.com:19302' }, // google's public stun server
+//        { urls: 'stun:stun1.l.google.com:19302' },
+//        { urls: 'stun:stun2.l.google.com:19302' }
+//    ]
+//};
+//const servers = {
+//    iceServers: [
+//        { urls: 'turn: openrelay.metered.ca: 80' }, // Google's public STUN server
+//        { urls: 'turn: openrelay.metered.ca: 80' },
+//        { urls: 'turn: openrelay.metered.ca: 80' }
+//    ]
+//};
 const servers = {
-    iceServers: [
-        { urls: 'stun:stun.l.google.com:19302' }, // Google's public STUN server
-        { urls: 'stun:stun1.l.google.com:19302' },
-        { urls: 'stun:stun2.l.google.com:19302' }
+    iceservers: [
+        {
+            urls: 'turn:openrelay.metered.ca:80'
+        }
     ]
 };
 let dotNet;
