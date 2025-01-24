@@ -10,8 +10,9 @@ builder.Services.AddAuthorizationCore();
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddAuthenticationStateDeserialization();
 builder.Services.AddScoped<WebRtcService>();
-//builder.Services.AddScoped<SMSVideoChat9.Client.Services.IFriendService, FriendService>();
+
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IFriendService, FriendService>();
 // Register HttpClient with a base address (replace with your server's URL)
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 

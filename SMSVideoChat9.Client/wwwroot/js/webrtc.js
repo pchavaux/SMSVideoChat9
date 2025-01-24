@@ -3,7 +3,7 @@ let peerConnection;
 
 async function startSignalRConnection() {
     connection = new signalR.HubConnectionBuilder()
-        .withUrl("/webrtchub")
+        .withUrl("/messagehub")
         .build();
 
     await connection.start();
