@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Http.Connections;
 using SMSVideoChat9.Client.Services;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSignalR();
-
+ 
 builder.Services.AddResponseCompression(opts =>
 {
     opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(

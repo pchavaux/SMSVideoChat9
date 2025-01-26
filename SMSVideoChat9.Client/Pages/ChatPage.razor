@@ -1,8 +1,9 @@
 ﻿@page "/chat"
-@rendermode InteractiveWebAssembly
+@inject ILogger<ChatPage> _logger
 @using Microsoft.AspNetCore.SignalR.Client
 @inject NavigationManager Navigation
 @implements IAsyncDisposable
+@rendermode InteractiveWebAssembly
 
 <PageTitle>Chat</PageTitle>
 
@@ -38,7 +39,7 @@
     protected override async Task OnInitializedAsync()
     {
         hubConnection = new HubConnectionBuilder()
-            .WithUrl(Navigation.ToAbsoluteUri("/messagehub"))
+            .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
             .Build();
 
         hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
@@ -53,9 +54,15 @@
 
     private async Task Send()
     {
+
         if (hubConnection is not null)
         {
+            _logger.LogInformation("hub connection is not null.");
             await hubConnection.SendAsync("SendMessage", userInput, messageInput);
+        }
+        else
+        {
+            _logger.LogInformation("hub connection is null.");
         }
     }
 
